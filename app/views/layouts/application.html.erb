@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Individualproj</title>
+    <title><%= yield(:title) %> | Lesser-Known Enlightenment Philosophers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Girassol|Roboto&display=swap" rel="stylesheet"> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track':
+        'reload' %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Lesser Known Enlightenment Philosophers</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/help">Help</a></li>
+    </ul>
+  </div>
+    </nav>
+     <div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8 main"> <%= yield %></div>
+  <div class="col-sm-2"></div>
+</div> 
   </body>
 </html>

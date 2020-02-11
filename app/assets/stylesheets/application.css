@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+/* color scheme credit to equimoove on ColourLovers
+https://www.colourlovers.com/palette/4696656/Equimoove
+*/
+
+body {
+    background-color: #605063;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.main {
+    background-color: #ffdfb8;
+    padding: 2% 5%;
+    border-radius: 25px;
+    border-top: 4px solid #EF9F3E;
+    border-bottom: 4px solid #EF9F3E;
+}
+
+.navbar-inverse {
+    background-color: #245b75;
+    border: 0px;
+    border-bottom: 4px solid #EF9F3E;
+}
+
+.nav.navbar-nav li a {
+    color: #EF9F3E;
+}
+
+.navbar-inverse .navbar-brand {
+    font-family: 'Girassol', cursive;
+    color: #EF9F3E;
+    font-size: 26px;
+}
+
+h1 {
+    font-family: 'Girassol', cursive;
+    text-align: center;
+}
