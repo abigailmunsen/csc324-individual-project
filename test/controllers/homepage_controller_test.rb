@@ -23,18 +23,27 @@ class HomepageControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "About | #{@base_title}"
   end
 
-  test "philosopher array created" do
-    get '/'
-    assert_not_nil assigns(:philosophers)
-  end
-
   test "random philosopher selected" do
     get '/'
-    assert_not_nil assigns(:random_philosopher)
+    assert_not_nil assigns(:rand_phil)
   end
   
-  test "random philosopher displayed" do
+  test "random philosopher name displayed" do
     get '/'
-    assert_select("#random_display", "Your random philosopher is #{assigns[:random_philosopher]}.")
+    assert_not_nil assigns[:rand_phil].name
+    assert_select("#name",  "#{assigns[:rand_phil].name}")
+  end
+
+  test "random philosopher years displayed" do
+    get '/'
+    assert_not_nil assigns[:rand_phil].birthyear
+    assert_not_nil assigns[:rand_phil].deathyear
+    assert_select("#years",  "#{assigns[:rand_phil].birthyear} - #{assigns[:rand_phil].deathyear}")
+  end
+
+  test "random philosopher desc displayed" do
+    get '/'
+    assert_not_nil assigns[:rand_phil].desc
+    assert_select("#desc",  "#{assigns[:rand_phil].desc}")
   end
 end

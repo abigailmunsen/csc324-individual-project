@@ -30,6 +30,7 @@ body {
     border-radius: 25px;
     border-top: 4px solid #EF9F3E;
     border-bottom: 4px solid #EF9F3E;
+    text-align: center
 }
 
 .navbar-inverse {
@@ -51,4 +52,18 @@ body {
 h1 {
     font-family: 'Girassol', cursive;
     text-align: center;
+}
+
+#philpresent {
+    padding: 2% 5%;
+    
+}
+
+#name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#years {
+    font-style: italic;
 }

@@ -5,10 +5,12 @@
   </head>
   <body>
     <h1>Home</h1>
-    <p id="random_display">
-      Your random philosopher is <%= @random_philosopher %>.
-    </p>
-    <button onClick="window.location.reload();" class="btn
-    btn-default">Try again</button>
+    <p>Your random philosopher is:</p>
+    <div id="philpresent">
+      <p id="name"><%= @rand_phil.name %></p>
+      <p id="years"><%= @rand_phil.birthyear %> - <%= @rand_phil.deathyear %></p>
+      <p id="desc"><%= @rand_phil.desc %></p>
+    </div>
+    <button onClick="window.location.reload();" class="btn btn-default">Try again</button>
   </body>
 </html>

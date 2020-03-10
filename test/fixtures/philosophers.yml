@@ -1,0 +1,20 @@
+first:
+ id: 0
+ name: "Abigail Munsen"
+ birthyear: 2001
+ deathyear: 2020
+ desc: "The author of this code."
+
+second:
+ id: 1
+ name: "Baruch Spinoza"
+ birthyear: 1632
+ deathyear: 1677
+ desc: "Not a lesser known philosopher, which is why he's in the test data."
+
+third:
+ id: 2
+ name: "Rene Descartes"
+ birthyear: 1596
+ deathyear: 1650
+ desc: "Not a lesser known philosopher, which is why he's in the testdata."
