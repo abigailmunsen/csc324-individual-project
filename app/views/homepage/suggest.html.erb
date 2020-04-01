@@ -1,0 +1,60 @@
+<% provide(:title, "Suggest") %>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1><%= yield(:title) %></h1>
+    <p>
+      Here, you can suggest new lesser-known philosophers, and vote on which ones you want to be added to this website.
+    </p>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-6" id="suggestform">
+          <h2>Suggest</h2>
+          <p>
+            Please enter the information about your philosopher in the below form.
+          </p>
+
+          <%= form_with model:Suggestion.new do |f| %>
+            <%= label_tag(:name, "Name:") %>
+            <%= f.text_field :name %><br>
+            <%= label_tag(:birthyear, "Birth year:") %>
+            <%= f.number_field :birthyear, in: 1550..1800, step: 1, value: 1600%><br>
+            <%= label_tag(:deathyear, "Death year:") %>
+            <%= f.number_field :deathyear, in: 1550..1850, step: 1, value: 1700%><br>
+            <%= label_tag(:desc, "Description:") %><br>
+            <%= f.text_area :desc %><br>
+            <%= f.submit "Create" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6" id="votes">
+          <h2>Vote</h2>
+          <p>Vote on suggested philosophers below!</p>
+                <% @suggestions.each do |sugg| %>
+                  <div class="vote">
+                    <p id="suggname"><%= sugg.name %>  </p>
+                    <p id="suggyears"><%= sugg.birthyear %> - <%=  sugg.deathyear %></p>
+                    <p id="suggdesc"><%= sugg.desc %></p>
+                    <table id="dispvotes" style="width:100%">
+                      <tr>
+                        <th><p id="notphil">Not a philosopher: <%=sugg.notphilvotes%></p></th>
+                        <th><p id="upvotes">Good suggestion: <%=sugg.goodvotes%></p></th>
+                        <th><p id="downvotes">Bad suggestion: <%=sugg.badvotes%></p></th>
+                      </tr>
+                      <tr>
+                        <td><%= link_to "Vote", "/suggestions/#{sugg.id}/incNotPhil", :method => :put %></td>
+                        <td><%= link_to "Vote", "/suggestions/#{sugg.id}/incGood", :method => :put %></td>
+                        <td><%= link_to "Vote", "/suggestions/#{sugg.id}/incBad", :method => :put %></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <br>
+                <% end %>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

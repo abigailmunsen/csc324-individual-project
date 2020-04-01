@@ -1,5 +1,4 @@
 class Philosophers < ActiveRecord::Migration[4.2]
-   
    def self.up
       create_table :philosophers do |t|
          t.column :name, :string

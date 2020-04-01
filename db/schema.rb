@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 202002262) do
+ActiveRecord::Schema.define(version: 2020_04_01_154505) do
 
   create_table "philosophers", force: :cascade do |t|
     t.string "name"
     t.integer "birthyear"
     t.integer "deathyear"
     t.text "desc"
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.string "name"
+    t.integer "birthyear"
+    t.integer "deathyear"
+    t.text "desc"
+    t.integer "notphilvotes", default: 0
+    t.integer "goodvotes", default: 0
+    t.integer "badvotes", default: 0
   end
 
 end

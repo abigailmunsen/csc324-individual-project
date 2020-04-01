@@ -6,7 +6,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+#   Philosopher.delete_all
+#   Suggestion.delete_all
 
 Philosopher.create(name:'Pierre Bayle', birthyear: 1647, deathyear: 1706, desc:"Wrote a biographical dictionary that Voltaire called “the arsenal of the Enlightenment”")
 Philosopher.create(name:'Robert Boyle', birthyear: 1627, deathyear: 1691, desc:" English / Irish physicist and chemist")
@@ -40,3 +41,5 @@ Philosopher.create(name:'William Gottlieb Tennemann', birthyear: 1761, deathyear
 Philosopher.create(name:'Dugald Stewart', birthyear: 1753, deathyear: 1828, desc:"Scottish moral philosopher ")
 Philosopher.create(name:'Mary Wollstonecraft', birthyear: 1759, deathyear: 1797, desc:"English philosopher and writer")
 
+Suggestion.create(name: 'James Beattie', birthyear: 1735, deathyear: 1803, desc:"Scottish poet, moralist and philosopher.", notphilvotes: 0, goodvotes: 0, badvotes: 0)
+Suggestion.create(name: 'Louis Jaucourt', birthyear: 1704, deathyear: 1779, desc:"French scholar and the most prolific contributor to the Encyclopédie.", notphilvotes: 0, goodvotes: 0, badvotes: 0)

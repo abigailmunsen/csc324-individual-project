@@ -6,6 +6,8 @@ class HomepageController < ApplicationController
   def about
   end
 
-  def help
+  def suggest
+    @suggestions = Suggestion.all.order(goodvotes: :desc)
   end
+
 end
